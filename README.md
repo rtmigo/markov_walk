@@ -37,8 +37,8 @@ before we get to point 0?
 
 # The code
 
-It implements matrix computations for [Absorbing Markov chains](https://en.wikipedia.org/wiki/Absorbing_Markov_chain),
-[applying](https://math.stackexchange.com/a/2912626) them to the particular problem. 
+The described problem is well modeled by [Absorbing Markov chains](https://en.wikipedia.org/wiki/Absorbing_Markov_chain).
+The code performs the necessary matrix calculations and returns the answers as `float` numbers. 
 
 ```python3
 from markov_walk import MarkovWalk
