@@ -1,7 +1,11 @@
 # [markov walk](https://github.com/rtmigo/markov_walk#readme)
 [![Generic badge](https://img.shields.io/badge/ready_for_use-maybe-orange.svg)](#)
 [![Actions Status](https://github.com/rtmigo/markov_walk/workflows/unit%20test/badge.svg?branch=master)](https://github.com/rtmigo/vien/actions)
-[![Generic badge](https://img.shields.io/badge/Python-3.8|-blue.svg)](#)
+[![Generic badge](https://img.shields.io/badge/Python-3.8+-blue.svg)](#)
+
+This module solves a particular mathematical problem related to probability theory. 
+
+----
 
 # The problem
 
@@ -26,7 +30,7 @@ before we get to point 0?
 
 # The solution
 
-The question was and got the [answer](https://math.stackexchange.com/a/2912626) from Aaron Montgomery: 
+The question was asked on StackExchange and got the [answer](https://math.stackexchange.com/a/2912626) from Aaron Montgomery: 
 
 >The book "Random Walks and Electric Networks" has some useful examples that should be of assistance:
 https://math.dartmouth.edu/~doyle/docs/walks/walks.pdf
