@@ -21,8 +21,7 @@ jobs:
     timeout-minutes: 5
     strategy:
       matrix:
-        #os: [macos-latest, ubuntu-latest]
-        python-version: [3.8, 3.10]
+        python-version: [3.8, 3.9]
 
     steps:
       - uses: actions/checkout@v2
