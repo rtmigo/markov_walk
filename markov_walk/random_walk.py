@@ -1,9 +1,7 @@
+# SPDX-FileCopyrightText: (c) 2018 Art Galkin <ortemeo@gmail.com>
+# SPDX-License-Identifier: BSD-3-Clause
 
-# THIS MODULE
-# ===========
-#
-# Solves the described problem with the proposed algorithm.
-#
+# If you've ever wondered what comments look like in Russian, scroll down.
 
 import multiprocessing
 import random
@@ -81,6 +79,9 @@ class MarkovWalk:
 
     @cached_property
     def right_edge_probs(self) -> List[float]:
+        """`walk.right_edge_probs[pos]` is the probability for a starting point `pos`, that after infinite wandering we
+        will leave the table on the right, and not on the left."""
+
         # совершаем случайное блуждание между точками.
         # В точке i вероятность шага вправо равна stepRightProbs[i].
         # В точке i вероятность шага влево равна 1-stepRightProbs[i].
@@ -100,6 +101,8 @@ class MarkovWalk:
 
     @property
     def ever_reach_probs(self) -> np.ndarray:
+        """Returns a matrix so that `ever_reach_probs[startPos][endPos]` is the probability, that after
+        infinite wandering started at `startPos` we will ever reach the point `endPos`."""
         return self.amc.transient_prob
 
 
@@ -231,7 +234,6 @@ class TestWalk(unittest.TestCase):
             self.assertTrue(np.allclose(amc_visits_vars[start_pos], empirical_visit_variances, atol=0.05))
 
         print("test_edge ok!")
-
 
     def test_transient(self):
 

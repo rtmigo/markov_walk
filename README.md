@@ -54,7 +54,7 @@ walk = MarkovWalk(step_right_probs)
 So now
 
 `ever_reach_probs[startPos][endPos]` is the probability, that after
-infinite wandering started at `startPos` will will ever reach the point `endPos`.
+infinite wandering started at `startPos` we will ever reach the point `endPos`.
 
 `walk.right_edge_probs[pos]` is the probability for a starting point `pos`, that after infinite wandering we will leave 
 the table on the right, and not on the left.
