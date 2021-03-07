@@ -146,7 +146,7 @@ class AbsorbingMarkovChain:
         # (before being absorbed) is the (i,j)-entry of the matrix N2
 
         # в википедии Nsq определяется как произведение Адамара, где матрица умножается на саму себя.
-        # А я просто воспроизведу в квадрат каждую ячейку.
+        # А я просто возведу в квадрат каждую ячейку.
         Nsq = np.square(self._N)
 
         N2 = np.matmul(self._N, 2 * self._Ndg - self._It) - Nsq
