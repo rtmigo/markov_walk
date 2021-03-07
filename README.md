@@ -59,5 +59,5 @@ infinite wandering started at `startPos` will will ever reach the point `endPos`
 `walk.right_edge_probs[pos]` is the probability for a starting point `pos`, that after infinite wandering we will leave 
 the table on the right, and not on the left.
 
-By positions we mean indexes in `step_right_probs`. For the example above, each index must be from range `0 <= pos < 6`.
+By positions we mean indexes in `step_right_probs`. For the example above, each index must be from range `0<=pos<6`.
 
