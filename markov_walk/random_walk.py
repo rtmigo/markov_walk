@@ -9,6 +9,7 @@ import multiprocessing
 import random
 import sys
 import unittest
+from functools import cached_property  # needs python 3.8
 from typing import *
 
 import numpy as np
@@ -74,10 +75,11 @@ class TestRandomWalkStochasticMatrix(unittest.TestCase):
 
 class MarkovWalk:
 
-    def __init__(self, stepRightProbs: Sequence[float]):
-        self.P = random_walk_stochastic_matrix(stepRightProbs)
+    def __init__(self, step_right_probs: Sequence[float]):
+        self.P = random_walk_stochastic_matrix(step_right_probs)
         self.amc = AbsorbingMarkovChain(np.array(self.P))
 
+    @cached_property
     def right_edge_probs(self) -> List[float]:
         # совершаем случайное блуждание между точками.
         # В точке i вероятность шага вправо равна stepRightProbs[i].
@@ -96,24 +98,25 @@ class MarkovWalk:
 
         return self.amc.absorbing_prob[:, 1].flatten()
 
-    def everReachProbs(self) -> np.ndarray:
+    @property
+    def ever_reach_probs(self) -> np.ndarray:
         return self.amc.transient_prob
 
 
 class TestWalk(unittest.TestCase):
 
     @staticmethod
-    def walkToEdge(stepRightProbs: Sequence[float], startPos: int):
-        visits = [0] * len(stepRightProbs)
-        pos = startPos
+    def walkToEdge(step_right_probs: Sequence[float], start_pos: int):
+        visits = [0] * len(step_right_probs)
+        pos = start_pos
         for step in range(1, sys.maxsize):
-            if random.random() < stepRightProbs[pos]:
+            if random.random() < step_right_probs[pos]:
                 pos += 1
             else:
                 pos -= 1
             if pos < 0:
                 return -1, step, visits
-            if pos >= len(stepRightProbs):
+            if pos >= len(step_right_probs):
                 return +1, step, visits
             visits[pos] += 1
 
@@ -195,7 +198,9 @@ class TestWalk(unittest.TestCase):
         step_right_probs = [0.3, 0.5, 0.7, 0.4, 0.8, 0.9]
         mv = MarkovWalk(step_right_probs)
 
-        amc_probs = mv.right_edge_probs()
+        self.assertEqual(len(step_right_probs), len(mv.right_edge_probs))
+
+        amc_probs = mv.right_edge_probs
         amc_step_num_vars = mv.amc.stepsVariance
         amc_visits_vars = mv.amc.visits_variance
 
@@ -227,10 +232,13 @@ class TestWalk(unittest.TestCase):
 
         print("test_edge ok!")
 
+
     def test_transient(self):
 
         step_right_probs = [0.3, 0.5, 0.7, 0.4, 0.8, 0.9]
-        tprobs = MarkovWalk(step_right_probs).everReachProbs()  # walkToProbs(step_right_probs)
+        tprobs = MarkovWalk(step_right_probs).ever_reach_probs  # walkToProbs(step_right_probs)
+
+        self.assertEqual(len(step_right_probs), len(tprobs))
 
         # сравним ожидаемые (вычисленные алгоритмом) вероятности с эмпирическими
 
