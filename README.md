@@ -33,7 +33,7 @@ In other words, it is like a Markov chain: states are points; transitions are po
 neighboring states; all transition probabilities are known.
 
 Suppose the motion begins at point 3. How can we calculate the probability that we will get to point 7
-before we get to point 0?
+before we get to point 0? What is the probability we will get to point 5 before 0 and 7? 
 
 # The code
 
@@ -47,13 +47,22 @@ step_right_probs = [0.3, 0.5, 0.7, 0.4, 0.8, 0.9]
 walk = MarkovWalk(step_right_probs)
 ```
 
-So now
-
 `ever_reach_probs[startPos][endPos]` is the probability, that after
 infinite wandering started at `startPos` we will ever reach the point `endPos`.
 
 `walk.right_edge_probs[pos]` is the probability for a starting point `pos`, that after infinite wandering we will leave 
 the table on the right, and not on the left.
 
-By positions we mean indexes in `step_right_probs`.
+By positions we mean indexes in `step_right_probs`. The point 1 from the example has index `0` in the list. So we will decrease all indices from the example by one.   
+
+```python3
+# motion begins at point 3. 
+# The probability that we will get to point 7 before we get to point 0: 
+print(walk.right_edge_probs[3-1])
+
+# motion begins at point 3. 
+# The probability we will get to point 5 before 0 and 7:
+print(walk.ever_reach_probs[3-1][5-1])
+
+```
 
