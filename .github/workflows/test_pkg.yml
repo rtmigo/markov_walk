@@ -13,9 +13,9 @@ on:
       - '**.txt'
       -
 jobs:
-  if: false # always skip job
 
   test:
+    if: false # always skip job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
