@@ -12,7 +12,7 @@ We know which car the drunkard is in now. Questions answered by the module:
 
 - What is the probability that he will be thrown out by the ticket collector standing at the beginning of the train, and not at the end?
 
-- What is the likelihood that he will at least visit his car before being thrown out?
+- What is the likelihood that he will at least visit his car before being kicked out?
 
 # Stricter problem statement
 
@@ -35,27 +35,10 @@ neighboring states; all transition probabilities are known.
 Suppose the motion begins at point 3. How can we calculate the probability that we will get to point 7
 before we get to point 0?
 
-
-
-## The solution
-
-The question was asked on StackExchange and got the [answer](https://math.stackexchange.com/a/2912626) from Aaron Montgomery: 
-
-> The book "Random Walks and Electric Networks" has some useful examples that should be of assistance:
-> https://math.dartmouth.edu/~doyle/docs/walks/walks.pdf
-> In particular, I'll point you to section 1.2.6 -- particularly, the part starting with, "As a second example,"
-> on the top of page 26.
->
->
-
-It computes matrices for the 
-
-[drunkard's walk](https://en.wikipedia.org/wiki/Random_walk)
-
 # The code
 
 It implements matrix computations for [Absorbing Markov chains](https://en.wikipedia.org/wiki/Absorbing_Markov_chain),
-applying them to the particular problem. 
+[applying](https://math.stackexchange.com/a/2912626) them to the particular problem. 
 
 ```python3
 from markov_walk import MarkovWalk
