@@ -1,5 +1,5 @@
 # [markov walk](https://github.com/rtmigo/markov_walk#readme)
-[![Actions Status](https://github.com/rtmigo/markov_walk/workflows/unit%20test/badge.svg?branch=master)](https://github.com/rtmigo/vien/actions)
+[![Actions Status](https://github.com/rtmigo/markov_walk/workflows/unit%20test/badge.svg?branch=master)](https://github.com/rtmigo/markov_walk/actions)
 [![Generic badge](https://img.shields.io/badge/Python-3.8+-blue.svg)](#)
 
 This module solves a particular mathematical problem related to probability theory. 
