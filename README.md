@@ -4,9 +4,17 @@
 
 This module solves a particular mathematical problem related to probability theory. 
 
-----
+Let's say a completely drunk passenger, while on a train, is trying to find his car. The cars are connected, so he wanders between them. Some transitions between cars attract him more, and some less.
 
-# The problem
+At the very beginning and at the very end of the train there are ticket collectors: if they meet a drunkard, they will kick him out of the train.
+
+We know which car the drunkard is in now. Questions answered by the module:
+
+- What is the probability that he will be thrown out by the ticket collector standing at the beginning of the train, and not at the end?
+
+- What is the likelihood that he will at least visit his car before being thrown out?
+
+# Stricter problem statement
 
 Suppose we are dealing with a discrete 1D random walk. At each point, we have different probabilities of
 making step to the left or to the right.
@@ -27,6 +35,8 @@ neighboring states; all transition probabilities are known.
 Suppose the motion begins at point 3. How can we calculate the probability that we will get to point 7
 before we get to point 0?
 
+
+
 ## The solution
 
 The question was asked on StackExchange and got the [answer](https://math.stackexchange.com/a/2912626) from Aaron Montgomery: 
@@ -35,14 +45,17 @@ The question was asked on StackExchange and got the [answer](https://math.stacke
 > https://math.dartmouth.edu/~doyle/docs/walks/walks.pdf
 > In particular, I'll point you to section 1.2.6 -- particularly, the part starting with, "As a second example,"
 > on the top of page 26.
+>
+>
+
+It computes matrices for the 
+
+[drunkard's walk](https://en.wikipedia.org/wiki/Random_walk)
 
 # The code
 
-The solution was implemented in module `markov_walk`.
-
-It is not intended to be released as a package, so there is no installation instructions.
-
-To solve the problem described:
+It implements matrix computations for [Absorbing Markov chains](https://en.wikipedia.org/wiki/Absorbing_Markov_chain),
+applying them to the particular problem. 
 
 ```python3
 from markov_walk import MarkovWalk
