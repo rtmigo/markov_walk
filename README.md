@@ -66,6 +66,6 @@ print(walk.ever_reach_probs[3-1][5-1])
 
 ```
 -----
-<sup><a name="myfootnote1">1</a></sup> Perhaps you are worried about why the ticket collectors are going to kick the passenger out. The reason is that he is traveling on a lottery ticket.[↩](#a1)
+<sup><a name="myfootnote1">1</a></sup> Perhaps you are worried about why the ticket collectors are going to kick the passenger out. The reason is that he is traveling on a lottery ticket. [^](#a1)
 
 
