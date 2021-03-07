@@ -6,7 +6,7 @@ This module solves a particular mathematical problem related to probability theo
 
 Let's say a completely drunk passenger, while on a train, is trying to find his car. The cars are connected, so he wanders between them. Some transitions between cars attract him more, and some less.
 
-At the very beginning and at the very end of the train there are ticket collectors: if they meet a drunkard, they will kick him out of the train.<sup id="a1">[1](#myfootnote1)</sup>
+At the very beginning and at the very end of the train there are ticket collectors: if they meet a drunkard, they will kick him out of the train.<sup id="a1">[*](#myfootnote1)</sup>
 
 We know which car the drunkard is in now. Questions answered by the module:
 
@@ -66,6 +66,6 @@ print(walk.ever_reach_probs[3-1][5-1])
 
 ```
 -----
-<sup><a name="myfootnote1">1</a></sup> Perhaps you are worried about why the ticket collectors are going to kick the passenger out. The reason is that he is traveling on a lottery ticket.
+<sup><a name="myfootnote1">*</a></sup> Perhaps you are worried about why the ticket collectors are going to kick the passenger out. The reason is that he is traveling on a lottery ticket.
 
 
