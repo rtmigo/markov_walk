@@ -45,7 +45,7 @@ It performs all matrix calculations in `numpy` and returns the answers as `float
 ```bash
 cd /abc/your_project
 
-# clone the module to ./markov_walk subdir
+# clone the module to /abc/your_project/markov_walk
 svn export https://github.com/rtmigo/markov_walk/trunk/markov_walk markov_walk
 
 # install dependencies
