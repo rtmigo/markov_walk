@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-# SPDX-FileCopyrightText: (c) 2021 Art Galkin <ortemeo@gmail.com>
-# SPDX-License-Identifier: CC0-1.0
 
 import os
 import sys
