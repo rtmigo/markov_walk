@@ -63,7 +63,7 @@ step_right_probs = [0.3, 0.5, 0.7, 0.4, 0.8, 0.9]
 walk = MarkovWalk(step_right_probs)
 ```
 
-- `ever_reach_probs[start_state][end_state]` is the probability, that after
+- `walk.ever_reach_probs[start_state][end_state]` is the probability, that after
 infinite wandering started at `start_state` we will ever reach the point `end_state`
 
 - `walk.right_edge_probs[state]` is the probability for a starting `state`, that after infinite wandering we will leave 
