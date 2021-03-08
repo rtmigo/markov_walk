@@ -8,7 +8,7 @@ Let's say a completely drunk passenger, while on a train, is trying to find his 
 
 At the very beginning and at the very end of the train there are ticket collectors: if they meet a drunkard, they will kick him out of the train.<sup id="a1">[*](#myfootnote1)</sup>
 
-We know which car the drunkard is in now. Questions answered by the module:
+We know which car the drunkard is in now. The questions are:
 
 - What is the probability that he will be thrown out by the ticket collector standing at the beginning of the train, and not at the end?
 
