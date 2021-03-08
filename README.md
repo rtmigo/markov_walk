@@ -14,7 +14,7 @@ they will kick him out of the train.<sup id="a1">[*](#myfootnote1)</sup>
 
 We know which car the drunkard is in now. The questions are:
 
-- What is the probability that he will be thrown out by the ticket collector standing at the beginning of the train, and not at the end?
+- What is the likelihood that he will be thrown out by the ticket collector standing at the beginning of the train, and not at the end?
 
 - What is the likelihood that he will at least visit his car before being kicked out?
 
