@@ -18,7 +18,7 @@ We know which car the drunkard is in now. The questions are:
 
 - What is the likelihood that he will at least visit his car before being kicked out?
 
-# Stricter problem statement
+# On a sober head
 
 We are dealing with a discrete 1D random walk. At each state, we have different probabilities of
 making step to the left or to the right.
