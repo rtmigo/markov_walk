@@ -37,14 +37,19 @@ before we get to state `L`? What is the probability we will get to state `3` bef
 
 # What the module does
 
-The described problem is [well modeled](https://math.stackexchange.com/a/2912626) by [Absorbing Markov chains](https://en.wikipedia.org/wiki/Absorbing_Markov_chain).
-The code performs the necessary matrix calculations in `numpy` and returns the answers as `float` numbers.
+It uses [Absorbing Markov chains](https://en.wikipedia.org/wiki/Absorbing_Markov_chain) to solve the problem.
+It performs all matrix calculations in `numpy` and returns the answers as `float` numbers.
 
 # How to install
 
 ```bash
 cd /abc/your_project
+
+# clone the module to ./markov_walk subdir
 svn export https://github.com/rtmigo/markov_walk/trunk/markov_walk markov_walk
+
+# install dependencies
+pip3 install numpy
 ``` 
 
 Now you can `import markov_walk` from `/abc/your_project/your_module.py`
