@@ -4,9 +4,13 @@
 
 This module solves a particular mathematical problem related to probability theory. 
 
-Let's say a completely drunk passenger, while on a train, is trying to find his car. The cars are connected, so he wanders between them. Some transitions between cars attract him more, and some less.
+-----
 
-At the very beginning and at the very end of the train there are ticket collectors: if they meet a drunkard, they will kick him out of the train.<sup id="a1">[*](#myfootnote1)</sup>
+Let's say a completely drunk passenger, while on a train, is trying to find his car. The cars are connected, 
+so he wanders between them. Some transitions between cars attract him more, and some less.
+
+At the very beginning and at the very end of the train there are ticket collectors: if they meet a drunkard, 
+they will kick him out of the train.<sup id="a1">[*](#myfootnote1)</sup>
 
 We know which car the drunkard is in now. The questions are:
 
@@ -16,24 +20,20 @@ We know which car the drunkard is in now. The questions are:
 
 # Stricter problem statement
 
-Suppose we are dealing with a discrete 1D random walk. At each point, we have different probabilities of
+We are dealing with a discrete 1D random walk. At each state, we have different probabilities of
 making step to the left or to the right.
 
+| States        |   L   |   0   | **1** |    2  |   3   |   4   |   5   |   R   |
+|---------------|-------|-------|-------|-------|-------|-------|-------|-------|
+| P(move right) |  ...  |**0.3**|  0.5  |**0.7**|  0.4  |  0.8  |  0.9  |  ...  |
+| P(move left)  |  ...  |  0.7  |  0.5  |  0.3  |  0.6  |  0.2  |  0.1  |  ...  |
 
-|Points        | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-|--------------|---|---|---|---|---|---|---|---|
-|P(move right) |...|0.3|0.5|0.7|0.4|0.8|0.9|...|
-|P(move left)  |...|0.7|0.5|0.3|0.6|0.2|0.1|...|
+The probability to get from state `1` to state `2` is `0.7`.
+ 
+The probability to get from state `1` to state `0` is `0.3`.
 
-
-For example, the probability to get from point 3 to point 4 is 0.7, and the probability to get from same
-point 3 to 2 is 0.3.
-
-In other words, it is a Markov chain: states are points; transitions are possible only between
-neighboring states; all transition probabilities are known.
-
-Suppose the motion begins at point 3. How can we calculate the probability that we will get to point 7
-before we get to point 0? What is the probability we will get to point 5 before 0 and 7? 
+Suppose the motion begins at state `1`. How can we calculate the probability that we will get to state `R`
+before we get to state `L`? What is the probability we will get to state `3` before `L` and `R`? 
 
 # The code
 
@@ -56,13 +56,13 @@ the table on the right, and not on the left
 By positions we mean indexes in `step_right_probs`. The point 1 from the example has index `0` in the list. So we will decrease all indices from the example by one.   
 
 ```python3
-# motion begins at point 3. 
-# The probability that we will get to point 7 before we get to point 0: 
-print(walk.right_edge_probs[3-1])
+# the motion begins at state 2. 
+# How can we calculate the probability that we will get to state R before we get to state L?
+print(walk.right_edge_probs[2])
 
-# motion begins at point 3. 
-# The probability we will get to point 5 before 0 and 7:
-print(walk.ever_reach_probs[3-1][5-1])
+# the motion begins at state 1.
+# What is the probability we will get to state 3 before L and R? 
+print(walk.ever_reach_probs[1][3])
 
 ```
 -----
