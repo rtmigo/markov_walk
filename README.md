@@ -24,9 +24,9 @@ We are dealing with a discrete 1D random walk. At each state, we have different 
 making step to the left or to the right.
 
 | States        |   L   |   0   |  < 1 >  |    2  |   3   |   4   |   5   |   R   |
-|---------------|-------|-------|-------|-------|-------|-------|-------|-------|
-| P(move right) |  ...  |**0.3**|  0.5  |**0.7**|  0.4  |  0.8  |  0.9  |  ...  |
-| P(move left)  |  ...  |  0.7  |  0.5  |  0.3  |  0.6  |  0.2  |  0.1  |  ...  |
+|---------------|-------|-------|---------|-------|-------|-------|-------|-------|
+| P(move right) |  ...  |**0.3**|    0.5  |**0.7**|  0.4  |  0.8  |  0.9  |  ...  |
+| P(move left)  |  ...  |  0.7  |    0.5  |  0.3  |  0.6  |  0.2  |  0.1  |  ...  |
 
 The probability to get from state `1` to state `2` is `0.7`.
  
