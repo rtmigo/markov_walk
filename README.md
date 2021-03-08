@@ -29,7 +29,7 @@ making step to the left or to the right.
 For example, the probability to get from point 3 to point 4 is 0.7, and the probability to get from same
 point 3 to 2 is 0.3.
 
-In other words, it is like a Markov chain: states are points; transitions are possible only between
+In other words, it is a Markov chain: states are points; transitions are possible only between
 neighboring states; all transition probabilities are known.
 
 Suppose the motion begins at point 3. How can we calculate the probability that we will get to point 7
