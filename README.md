@@ -61,6 +61,15 @@ from markov_walk import MarkovWalk
 
 step_right_probs = [0.3, 0.5, 0.7, 0.4, 0.8, 0.9]
 walk = MarkovWalk(step_right_probs)
+
+# the motion begins at state 2. 
+# How can we calculate the probability that we will get to state R before we get to state L?
+print(walk.right_edge_probs[2])
+
+# the motion begins at state 1.
+# What is the probability we will get to state 3 before L and R? 
+print(walk.ever_reach_probs[1][3])
+
 ```
 
 - `walk.ever_reach_probs[start_state][end_state]` is the probability, that after
@@ -71,16 +80,6 @@ the table on the right, and not on the left
 
 By states we mean `int` indexes in `step_right_probs`.   
 
-```python3
-# the motion begins at state 2. 
-# How can we calculate the probability that we will get to state R before we get to state L?
-print(walk.right_edge_probs[2])
-
-# the motion begins at state 1.
-# What is the probability we will get to state 3 before L and R? 
-print(walk.ever_reach_probs[1][3])
-
-```
 -----
 <sup><a name="myfootnote1">*</a></sup> Perhaps you are worried about why the ticket collectors are going to kick the passenger out. The reason is that he is traveling on a lottery ticket.
 
