@@ -35,10 +35,21 @@ The probability to get from state `1` to state `0` is `0.3`.
 Suppose the motion begins at state `1`. How can we calculate the probability that we will get to state `R`
 before we get to state `L`? What is the probability we will get to state `3` before `L` and `R`? 
 
-# The code
+# What the module does
 
 The described problem is [well modeled](https://math.stackexchange.com/a/2912626) by [Absorbing Markov chains](https://en.wikipedia.org/wiki/Absorbing_Markov_chain).
-The code performs the necessary matrix calculations in `numpy` and returns the answers as `float` numbers. 
+The code performs the necessary matrix calculations in `numpy` and returns the answers as `float` numbers.
+
+# How to install
+
+```bash
+cd /abc/your_project
+svn export https://github.com/rtmigo/markov_walk/trunk/markov_walk markov_walk
+``` 
+
+Now you can `import markov_walk` from `/abc/your_project/your_module.py`
+
+# How to use
 
 ```python3
 from markov_walk import MarkovWalk
