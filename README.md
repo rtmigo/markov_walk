@@ -12,7 +12,7 @@ connected, so he wanders between them. Some transitions between cars attract him
 less.
 
 At the very beginning and at the very end of the train there are ticket collectors: if they meet a
-drunkard, they will kick him out of the train. [*](#note1)
+drunkard, they will kick him out of the train.[*](#note1)
 
 We know which car the drunkard is in now. The questions are:
 
